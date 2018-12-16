@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import ProfilePic from "../images/userimg.jpg";
+import UserImg from "../../images/userimg.jpg";
 
-export default class Message extends Component {
+export default class UserMessage extends Component {
   render() {
     return (
       <div className="message">
-        <div className="user-image">
-          <img src={ProfilePic} alt="" />
+        <div className="profile-image">
+          <img src={UserImg} alt="" />
         </div>
         <div className="chat left">{this.props.message}</div>
       </div>

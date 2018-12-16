@@ -1,14 +1,14 @@
 import React, { Component } from "react";
-import Message from "./Message";
-import Button from "./Button";
-import Card from "./Card";
+import UserMessage from "./Message/UserMessage";
+import BotMessage from "./Message/BotMessage";
 
 export default class ChatBox extends Component {
   constructor() {
     super();
     this.state = {
       chatHistory: [],
-      messageToShow: ""
+      userCurrentMessage: "",
+      botCurrentMessage: ""
     };
 
     this.enterKeyPressed = this.enterKeyPressed.bind(this);
@@ -16,41 +16,21 @@ export default class ChatBox extends Component {
 
   enterKeyPressed(e) {
     if (e.key === "Enter") {
-      if (e.target.value.toUpperCase() === "BUTTON") {
-        this.setState(
-          {
-            messageToShow: <Button message={e.target.value} />
-          },
-          function() {
-            this.setState({
-              chatHistory: [...this.state.chatHistory, this.state.messageToShow]
-            });
-          }
-        );
-      } else if (e.target.value.toUpperCase() === "CARD") {
-        this.setState(
-          {
-            messageToShow: <Card message={e.target.value} />
-          },
-          function() {
-            this.setState({
-              chatHistory: [...this.state.chatHistory, this.state.messageToShow]
-            });
-          }
-        );
-      } else {
-        this.setState(
-          {
-            messageToShow: <Message message={e.target.value} />
-          },
-          function() {
-            this.setState({
-              chatHistory: [...this.state.chatHistory, this.state.messageToShow]
-            });
-          }
-        );
-      }
-
+      this.setState(
+        {
+          userCurrentMessage: <UserMessage message={e.target.value} />,
+          botCurrentMessage: <BotMessage message={e.target.value} />
+        },
+        function() {
+          this.setState({
+            chatHistory: [
+              ...this.state.chatHistory,
+              this.state.userCurrentMessage,
+              this.state.botCurrentMessage
+            ]
+          });
+        }
+      );
       e.target.value = "";
     }
   }

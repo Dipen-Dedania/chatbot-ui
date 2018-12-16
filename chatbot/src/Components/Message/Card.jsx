@@ -2,6 +2,6 @@ import React, { Component } from "react";
 
 export default class Card extends Component {
   render() {
-    return <div>{this.props.message}</div>;
+    return <div>My card</div>;
   }
 }

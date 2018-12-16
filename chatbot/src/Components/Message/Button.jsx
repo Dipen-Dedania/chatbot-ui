@@ -2,6 +2,6 @@ import React, { Component } from "react";
 
 export default class Button extends Component {
   render() {
-    return <div>{this.props.message}</div>;
+    return <div>This is the button</div>;
   }
 }
