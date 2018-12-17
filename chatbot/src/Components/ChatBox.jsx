@@ -32,6 +32,9 @@ export default class ChatBox extends Component {
         }
       );
       e.target.value = "";
+
+      let chatView = document.getElementsByClassName("chat-view");
+      chatView.scrollTop = chatView.scrollHeight;
     }
   }
 
@@ -41,7 +44,9 @@ export default class ChatBox extends Component {
         className={`chatbox ${this.props.buttonActive ? "" : "chatbox-hidden"}`}
       >
         <div className="chatbox-container">
-          <div className="chat-view">{this.state.chatHistory}</div>
+          <div className="chat-view" onScroll={this.scrollToBottom}>
+            {this.state.chatHistory}
+          </div>
 
           <input
             type="text"
