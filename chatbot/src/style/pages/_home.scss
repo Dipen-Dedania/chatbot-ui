@@ -1,15 +1,14 @@
 .home {
-  background-color: #21d4fd;
-  background-image: linear-gradient(19deg, #21d4fd 0%, #b721ff 100%);
+  background-color: #3f51b5;
   height: 100vh;
   width: 100vw;
   position: relative;
-
   overflow: hidden;
+
   .center-text {
     position: absolute;
     color: white;
-    top: 30%;
+    top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
 
@@ -19,6 +18,7 @@
     }
     p {
       font-size: calc(6px + 1vw);
+      text-align: center;
     }
   }
 }

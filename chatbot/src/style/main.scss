@@ -18,21 +18,16 @@
 @import "base/helpers";
 
 // 4. Layout-related sections
-@import "layout/header";
-@import "layout/footer";
+
 @import "./layout/chat-box";
 
 // 5. Components
-@import "components/breadcrumb";
 @import "components/button";
 @import "components/card";
-@import "components/pagination";
-@import "components/table";
+@import "components/message";
 
 // 6. Page-specific styles
 @import "pages/home";
-@import "pages/contact";
-@import "pages/login";
 
 // 7. Themes
 @import "themes/default";
